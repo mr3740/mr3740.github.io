@@ -6,7 +6,7 @@
 
     function closeDaumPostcode() {
         // iframe을 넣은 element를 안보이게 한다.
-        element_layer.style.display = 'block';
+        element_layer.style.display = 'none';
     }
 
     function execDaumPostcode() {
@@ -44,8 +44,7 @@
 
                 // iframe을 넣은 element를 안보이게 한다.
                 // (autoClose:false 기능을 이용한다면, 아래 코드를 제거해야 화면에서 사라지지 않는다.)
-                element_layer.style.display = 'block';
-                
+               
             },
             width : '100%',
             height : '100%'
