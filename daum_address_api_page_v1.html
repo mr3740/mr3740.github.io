@@ -4,6 +4,11 @@
     // 우편번호 찾기 화면을 넣을 element
     var element_layer = document.getElementById('layer');
 
+    function closeDaumPostcode() {
+        // iframe을 넣은 element를 안보이게 한다.
+        element_layer.style.display = 'block';
+    }
+
     function execDaumPostcode() {
         new daum.Postcode({
             oncomplete: function(data) {
@@ -39,7 +44,7 @@
 
                 // iframe을 넣은 element를 안보이게 한다.
                 // (autoClose:false 기능을 이용한다면, 아래 코드를 제거해야 화면에서 사라지지 않는다.)
-                // element_layer.style.display = 'none';
+                element_layer.style.display = 'block';
                 
             },
             width : '100%',
