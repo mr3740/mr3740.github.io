@@ -1,27 +1,9 @@
-﻿<div id="map" style="width:300px;height:300px;margin-top:10px;display:none"></div>
-
-<script src="https://ssl.daumcdn.net/dmaps/map_js_init/postcode.v2.js"></script>
-<script src="//apis.daum.net/maps/maps3.js?apikey=3fe0d0d35c76d90ac945281120dff5e2&libraries=services"></script>
+﻿<script src="https://ssl.daumcdn.net/dmaps/map_js_init/postcode.v2.js"></script>
 <script>
   window.onload=execDaumPostcode;
     // 우편번호 찾기 화면을 넣을 element
     var element_layer = document.getElementById('layer');
-    var mapContainer = document.getElementById('map'), // 지도를 표시할 div
-        mapOption = {
-            center: new daum.maps.LatLng(37.537187, 127.005476), // 지도의 중심좌표
-            level: 5 // 지도의 확대 레벨
-        };
 
-    //지도를 미리 생성
-    var map = new daum.maps.Map(mapContainer, mapOption);
-    //주소-좌표 변환 객체를 생성
-    var geocoder = new daum.maps.services.Geocoder();
-    //마커를 미리 생성
-    var marker = new daum.maps.Marker({
-        position: new daum.maps.LatLng(37.537187, 127.005476),
-        map: map
-    });
-    
     function closeDaumPostcode() {
         // iframe을 넣은 element를 안보이게 한다.
         element_layer.style.display = 'none';
@@ -35,22 +17,40 @@
 
                 // 각 주소의 노출 규칙에 따라 주소를 조합한다.
                 // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
-                var fullAddr = data.address; // 최종 주소 변수
+                var fullAddr = ''; // 최종 주소 변수
                 var extraAddr = ''; // 조합형 주소 변수
 
-                // 기본 주소가 도로명 타입일때 조합한다.
-                if(data.addressType === 'R'){
-                    //법정동명이 있을 경우 추가한다.
-                    if(data.bname !== ''){
-                        extraAddr += data.bname;
+                // 선택한 주소 타입
+                if(data.userSelectedType === 'R') {
+                    // 도로명
+                    if(data.userLanguageType === 'K') {
+                        fullAddr += data.roadAddress;
+                        
+                        // 법정동명이 있을 경우 추가한다.
+                        if(data.bname !== ''){
+                            extraAddr += data.bname;
+                        }
+                        // 건물명이 있을 경우 추가한다.
+                        if(data.buildingName !== ''){
+                            extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
+                        }
+                        // 조합형주소의 유무에 따라 양쪽에 괄호를 추가하여 최종 주소를 만든다.
+                        fullAddr += (extraAddr !== '' ? ' ('+ extraAddr +')' : '');
+                    
+                    } else {
+                        fullAddr += data.roadAddressEnglish;
                     }
-                    // 건물명이 있을 경우 추가한다.
-                    if(data.buildingName !== ''){
-                        extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
+                    
+                } else {
+                    // 지번
+                    if(data.userLanguageType === 'K') {
+                        fullAddr += data.jibunAddress;
+                    } else {
+                        fullAddr += data.jibunAddressEnglish;
                     }
-                    // 조합형주소의 유무에 따라 양쪽에 괄호를 추가하여 최종 주소를 만든다.
-                    fullAddr += (extraAddr !== '' ? ' ('+ extraAddr +')' : '');
+                
                 }
+                
                 
                  //document.getElementById('sample2_postcode').value = data.zonecode; //5자리 새우편번호 사용
                 //document.getElementById('sample2_address').value = fullAddr;
@@ -64,21 +64,6 @@
                 // (autoClose:false 기능을 이용한다면, 아래 코드를 제거해야 화면에서 사라지지 않는다.)
                 // element_layer.style.display = 'none';
                 
-                // 주소로 좌표를 검색
-                geocoder.addr2coord(data.address, function(status, result) {
-                    // 정상적으로 검색이 완료됐으면
-                    if (status === daum.maps.services.Status.OK) {
-                        // 해당 주소에 대한 좌표를 받아서
-                        var coords = new daum.maps.LatLng(result.addr[0].lat, result.addr[0].lng);
-                        // 지도를 보여준다.
-                        mapContainer.style.display = "block";
-                        map.relayout();
-                        // 지도 중심을 변경한다.
-                        map.setCenter(coords);
-                        // 마커를 결과값으로 받은 위치로 옮긴다.
-                        marker.setPosition(coords)
-                    }
-                });
             },
             width : '100%',
             height : '100%'
