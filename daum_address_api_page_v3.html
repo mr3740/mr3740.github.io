@@ -2,9 +2,6 @@
 <script src="//apis.daum.net/maps/maps3.js?apikey=3fe0d0d35c76d90ac945281120dff5e2&libraries=services"></script>
 <script>
 
-    //주소-좌표 변환 객체를 생성
-  var geocoder = new daum.maps.services.Geocoder();
-    
   window.onload=execDaumPostcode;
     // 우편번호 찾기 화면을 넣을 element
     var element_layer = document.getElementById('layer');
@@ -15,6 +12,10 @@
     }
 
     function execDaumPostcode() {
+    
+        //주소-좌표 변환 객체를 생성
+        var geocoder = new daum.maps.services.Geocoder();
+    
         new daum.Postcode({
             oncomplete: function(data) {
 
