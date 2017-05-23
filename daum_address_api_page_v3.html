@@ -63,7 +63,8 @@
                 //document.getElementById('sample2_addressEnglish').value = data.addressEnglish;
                 
                 window.WebViewBridge.setZoneCode(data.zonecode);
-                window.WebViewBridge.setFullAddress(fullAddr);
+                window.WebViewBridge.setFullAddress(fullAddr);                    
+                window.WebViewBridge.setClosePopup('true');
 
                 // iframe을 넣은 element를 안보이게 한다.
                 // (autoClose:false 기능을 이용한다면, 아래 코드를 제거해야 화면에서 사라지지 않는다.)
@@ -73,11 +74,10 @@
                 geocoder.addr2coord(data.address, function(status, result) {
                     // 정상적으로 검색이 완료됐으면
                     if (status === daum.maps.services.Status.OK) {
-                        // 해당 주소에 대한 좌표를 받아서
+                        // 해당 주소에 대한 좌표를 받으면 추가 호출
                         window.WebViewBridge.setCoords(result.addr[0].lat, result.addr[0].lng);
+                        window.WebViewBridge.setClosePopup('true');
                     }
-                    
-                    window.WebViewBridge.setClosePopup('true');
 
                 });
                 
