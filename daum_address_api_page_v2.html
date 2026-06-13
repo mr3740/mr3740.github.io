@@ -11,33 +11,25 @@
 </head>
 <body>
     <div id="layer"></div>
-    <script src="https://ssl.daumcdn.net/dmaps/map_js_init/postcode.v2.js"></script>
+    <script src="//t1.kakaocdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
     <script>
         window.onload = function() {
             var element_layer = document.getElementById('layer');
 
-            new daum.Postcode({
+            new kakao.Postcode({
                 oncomplete: function(data) {
                     var fullAddr = '';
                     var extraAddr = '';
 
                     if (data.userSelectedType === 'R') {
-                        if (data.userLanguageType === 'K') {
-                            fullAddr += data.roadAddress;
-                            if (data.bname !== '') extraAddr += data.bname;
-                            if (data.buildingName !== '') {
-                                extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
-                            }
-                            fullAddr += (extraAddr !== '' ? ' (' + extraAddr + ')' : '');
-                        } else {
-                            fullAddr += data.roadAddressEnglish;
+                        fullAddr = data.roadAddress;
+                        if (data.bname !== '') extraAddr += data.bname;
+                        if (data.buildingName !== '') {
+                            extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
                         }
+                        if (extraAddr !== '') fullAddr += ' (' + extraAddr + ')';
                     } else {
-                        if (data.userLanguageType === 'K') {
-                            fullAddr += data.jibunAddress;
-                        } else {
-                            fullAddr += data.jibunAddressEnglish;
-                        }
+                        fullAddr = data.jibunAddress;
                     }
 
                     window.WebViewBridge.setZoneCode(data.zonecode);
