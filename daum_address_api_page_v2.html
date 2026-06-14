@@ -13,12 +13,10 @@
     <div id="layer"></div>
     <script src="//t1.kakaocdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
     <script>
-        var postcodeInstance = null;
-
-        function initPostcode() {
+        window.onload = function() {
             var element_layer = document.getElementById('layer');
-            element_layer.innerHTML = '';
-            postcodeInstance = new kakao.Postcode({
+
+            new kakao.Postcode({
                 oncomplete: function(data) {
                     var fullAddr = '';
                     var extraAddr = '';
@@ -40,20 +38,7 @@
                 },
                 width: '100%',
                 height: '100%'
-            });
-            postcodeInstance.embed(element_layer, { autoClose: false });
-        }
-
-        // Android에서 호출: 위젯을 초기 상태로 재설정 (최상단 이동)
-        window.resetToTop = function() {
-            initPostcode();
-        };
-
-        window.onload = function() {
-            initPostcode();
-            if (window.WebViewBridge) {
-                window.WebViewBridge.onPageReady();
-            }
+            }).embed(element_layer, { autoClose: false });
         };
     </script>
 </body>
