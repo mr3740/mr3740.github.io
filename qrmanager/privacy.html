@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>개인정보처리방침 - QR포켓</title>
+    <style>
+        :root {
+            color-scheme: light;
+            --text: #102a43;
+            --muted: #627d98;
+            --border: #d9e2ec;
+            --surface: #f6f8fc;
+            --accent: #102a43;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            background: #fff;
+            color: var(--text);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.75;
+        }
+        main { max-width: 860px; margin: 0 auto; padding: 32px 18px 72px; }
+        h1 { margin: 0 0 8px; font-size: 28px; line-height: 1.3; }
+        h2 { margin: 36px 0 10px; padding-bottom: 8px; border-bottom: 1px solid var(--border); font-size: 20px; }
+        p, li, td, th { font-size: 15px; }
+        ul { padding-left: 22px; }
+        a { color: #1a73e8; }
+        table { width: 100%; margin-top: 12px; border-collapse: collapse; font-size: 14px; }
+        th, td { padding: 10px 12px; border: 1px solid var(--border); vertical-align: top; text-align: left; }
+        th { background: var(--surface); font-weight: 700; }
+        .updated { margin: 0 0 28px; color: var(--muted); font-size: 14px; }
+        .summary { padding: 16px; border: 1px solid var(--border); border-left: 4px solid var(--accent); border-radius: 8px; background: var(--surface); }
+        .summary p { margin: 4px 0; }
+        .muted { color: var(--muted); }
+        @media (max-width: 600px) {
+            table { display: block; overflow-x: auto; }
+            h1 { font-size: 25px; }
+        }
+    </style>
+</head>
+<body>
+<main>
+    <h1>개인정보처리방침</h1>
+    <p class="updated">최종 업데이트: 2026년 9월 30일</p>
+
+    <section class="summary">
+        <p><strong>앱 이름:</strong> QR포켓</p>
+        <p><strong>패키지 이름:</strong> me.junstudio.qrmanager</p>
+        <p><strong>개발자:</strong> jun.studio</p>
+        <p><strong>문의:</strong> <a href="mailto:jun.studio1@gmail.com">jun.studio1@gmail.com</a></p>
+    </section>
+
+    <p>
+        본 개인정보처리방침은 개발자 <strong>jun.studio</strong>(이하 "개발자")가 제공하는
+        <strong>QR포켓</strong> 앱(패키지 이름: <strong>me.junstudio.qrmanager</strong>, 이하 "앱")에서
+        처리되는 정보와 그 이용 목적을 설명합니다.
+    </p>
+
+    <h2>1. 앱이 직접 처리하는 정보</h2>
+    <p>
+        앱은 회원가입이나 로그인을 요구하지 않으며 이름, 이메일 주소, 전화번호, 연락처, 금융 정보 또는 건강 정보처럼
+        사용자를 직접 식별하는 개인정보를 개발자 서버로 수집하지 않습니다. QR 코드 인식과 생성은 사용자 기기에서 이루어집니다.
+    </p>
+    <p>앱은 사용자가 기능을 실행하는 경우 다음 정보를 기기 내에서 처리할 수 있습니다.</p>
+    <ul>
+        <li>카메라 화면 또는 사용자가 선택한 사진에 포함된 QR 코드</li>
+        <li>QR 코드에서 인식한 URL 또는 텍스트</li>
+        <li>사용자가 QR 생성을 위해 직접 입력한 URL 또는 텍스트</li>
+        <li>사용자가 보관함에 입력한 제목과 저장 일시</li>
+    </ul>
+    <p>
+        QR 코드에는 사용자가 알지 못하는 URL이나 개인정보가 포함될 수 있습니다. 앱은 인식 결과를 표시하며,
+        URL 열기·저장·복사·공유 여부는 사용자가 직접 선택합니다. 외부 URL의 안전성이나 해당 웹사이트의 개인정보 처리는
+        개발자가 보장하지 않으므로 링크를 열기 전에 주소를 확인해야 합니다.
+    </p>
+
+    <h2>2. 카메라, 사진 선택 및 QR 처리</h2>
+    <table>
+        <tr><th>기능</th><th>처리 방식</th></tr>
+        <tr>
+            <td>카메라 QR 스캔</td>
+            <td>카메라 권한을 사용하여 QR 코드를 인식합니다. 카메라 프레임과 인식 과정은 기기에서 처리되며 개발자 서버로 전송하거나 저장하지 않습니다.</td>
+        </tr>
+        <tr>
+            <td>사진에서 QR 찾기</td>
+            <td>Android 시스템 사진 선택 도구를 사용합니다. 앱은 사용자가 선택한 사진에만 접근하며 사진 보관함 전체 접근 권한을 요청하지 않습니다.</td>
+        </tr>
+        <tr>
+            <td>QR 생성</td>
+            <td>사용자가 입력한 URL 또는 텍스트를 기기에서 QR 이미지로 변환합니다.</td>
+        </tr>
+        <tr>
+            <td>이미지 저장 및 공유</td>
+            <td>사용자가 기능을 직접 실행한 경우에만 QR 이미지를 사진 보관함에 저장하거나 Android 공유 메뉴를 통해 선택한 앱으로 전달합니다. 공유를 위해 앱의 임시 캐시 영역에 QR 이미지가 생성될 수 있습니다.</td>
+        </tr>
+    </table>
+
+    <h2>3. 보관함 데이터</h2>
+    <p>
+        사용자가 보관함 저장 기능을 선택하면 QR의 URL 또는 텍스트, 제목, 저장 출처 및 저장 일시가 앱의 로컬 데이터베이스에 저장됩니다.
+        이 데이터는 사용자의 기기에만 보관되며 개발자 서버로 전송되지 않습니다. 사용자는 앱의 보관함에서 각 항목을 삭제할 수 있고,
+        앱을 삭제하면 운영체제 정책에 따라 앱 내부 데이터도 함께 삭제됩니다.
+    </p>
+
+    <h2>4. 권한 및 네트워크 사용</h2>
+    <table>
+        <tr><th>권한 또는 기능</th><th>사용 목적</th></tr>
+        <tr>
+            <td>카메라</td>
+            <td>사용자가 카메라로 QR 코드를 스캔할 때만 사용합니다.</td>
+        </tr>
+        <tr>
+            <td>인터넷 및 네트워크 상태</td>
+            <td>Google AdMob 배너 및 네이티브 광고를 표시하고, 개인정보 동의 상태와 네트워크 상태에 따라 광고 요청을 처리하기 위해 사용합니다.</td>
+        </tr>
+        <tr>
+            <td>광고 ID</td>
+            <td>Google Mobile Ads SDK가 광고 표시, 빈도 관리, 광고 성과 측정 및 부정 사용 방지를 위해 사용할 수 있습니다.</td>
+        </tr>
+        <tr>
+            <td>시스템 사진 선택 도구</td>
+            <td>사용자가 QR을 인식할 사진 한 장을 선택하도록 사용하며 사진 보관함 전체 권한은 요청하지 않습니다.</td>
+        </tr>
+        <tr>
+            <td>저장소 쓰기(Android 9 이하)</td>
+            <td>사용자가 생성하거나 보관한 QR 이미지를 공용 사진 폴더에 저장할 때만 요청합니다. Android 10 이상에서는 시스템 미디어 저장 방식을 사용합니다.</td>
+        </tr>
+    </table>
+
+    <h2>5. 제3자 SDK 및 서비스</h2>
+    <p>
+        앱은 QR 인식, 광고 표시 및 광고 관련 개인정보 선택권 제공을 위해 Google의 SDK를 사용합니다.
+        QR 인식 대상 이미지와 인식된 QR 내용은 광고 SDK에 제공되지 않습니다.
+    </p>
+    <table>
+        <tr><th>서비스</th><th>처리될 수 있는 데이터</th><th>목적</th></tr>
+        <tr>
+            <td>Google ML Kit Barcode Scanning</td>
+            <td>카메라 프레임 또는 사용자가 선택한 이미지의 QR 코드 정보</td>
+            <td>기기 내 QR 코드 인식</td>
+        </tr>
+        <tr>
+            <td>Google AdMob / Google Mobile Ads SDK</td>
+            <td>광고 ID, 기기 또는 기타 식별자, IP 주소, 광고 노출·클릭 등 앱 상호작용, 진단 정보</td>
+            <td>배너·네이티브 광고 표시, 광고 성과 측정, 빈도 관리, 사기 예방, 보안 및 규정 준수</td>
+        </tr>
+        <tr>
+            <td>Google User Messaging Platform</td>
+            <td>개인정보 동의 상태 및 규제 지역에 따른 메시지 표시와 관련된 정보</td>
+            <td>광고 관련 개인정보 선택권 제공 및 동의 관리</td>
+        </tr>
+    </table>
+    <p>
+        Google의 개인정보 처리에 관한 자세한 내용은
+        <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google 개인정보처리방침</a>,
+        <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener">Google 광고 관련 정책</a> 및
+        <a href="https://business.safety.google/privacy/" target="_blank" rel="noopener">Google 비즈니스 데이터 책임 사이트</a>에서 확인할 수 있습니다.
+    </p>
+
+    <h2>6. 정보의 공유</h2>
+    <p>
+        개발자는 사용자의 QR 내용, 선택한 사진 또는 보관함 데이터를 직접 판매하거나 임의로 제3자에게 제공하지 않습니다.
+        사용자가 링크 열기나 공유 기능을 직접 실행하면 해당 URL 또는 QR 이미지가 브라우저나 사용자가 선택한 외부 앱으로 전달될 수 있으며,
+        이후 처리에는 해당 웹사이트 또는 앱의 개인정보처리방침이 적용됩니다. Google 광고 관련 SDK가 처리하는 정보는 광고 제공과
+        보안 등의 목적으로 Google 또는 광고 파트너에게 공유될 수 있습니다.
+    </p>
+
+    <h2>7. 보관 및 삭제</h2>
+    <ul>
+        <li>카메라 프레임과 선택한 사진은 앱이 별도로 복제하여 영구 보관하지 않으며 개발자 서버에도 저장하지 않습니다.</li>
+        <li>보관함 데이터는 사용자가 항목을 삭제하거나 앱을 삭제할 때까지 기기 내부에 저장됩니다.</li>
+        <li>공유를 위해 생성한 QR 이미지는 앱의 임시 캐시 영역에 보관될 수 있으며 운영체제의 저장 공간 관리 또는 앱 삭제 시 삭제됩니다.</li>
+        <li>사진 보관함에 저장하거나 외부 앱으로 공유한 QR 이미지의 삭제는 사용자가 해당 저장 위치 또는 공유 대상 앱에서 관리해야 합니다.</li>
+        <li>Google 서비스가 처리하는 데이터의 보관 및 삭제는 Google 정책을 따릅니다.</li>
+    </ul>
+
+    <h2>8. 이용자의 선택권</h2>
+    <ul>
+        <li>카메라 권한을 허용하지 않아도 시스템 사진 선택 도구와 QR 생성 기능을 사용할 수 있습니다.</li>
+        <li>사진을 선택하지 않으면 앱은 사진에 접근하지 않습니다.</li>
+        <li>보관함 저장을 선택하지 않으면 인식하거나 생성한 QR 내용은 앱의 로컬 데이터베이스에 저장되지 않습니다.</li>
+        <li>해당 지역에서 필요한 경우 앱의 개인정보 설정을 통해 광고 관련 선택을 다시 확인하거나 변경할 수 있습니다.</li>
+        <li>앱을 삭제하면 앱의 내부 데이터와 캐시가 함께 삭제됩니다.</li>
+    </ul>
+
+    <h2>9. 아동의 개인정보</h2>
+    <p>
+        앱은 아동을 주 대상으로 하지 않으며 아동의 개인정보를 의도적으로 수집하지 않습니다.
+        보호자가 아동의 개인정보가 처리되었다고 판단하는 경우 아래 문의처로 연락해 주세요.
+    </p>
+
+    <h2>10. 보안</h2>
+    <p>
+        앱은 QR 인식과 생성, 보관함 저장을 기기 내에서 수행하고 사용자가 선택한 사진에만 접근하는 등 정보 노출을 줄이기 위한
+        합리적인 기술적 조치를 사용합니다. 다만 어떠한 전자적 처리 방식도 절대적인 안전성을 보장할 수 없습니다.
+    </p>
+
+    <h2>11. 개인정보처리방침 변경</h2>
+    <p>
+        본 개인정보처리방침은 법령, Google Play 정책, 제3자 SDK 또는 앱 기능의 변경에 따라 수정될 수 있습니다.
+        변경 사항은 이 페이지에 게시하며 최종 업데이트 날짜를 함께 갱신합니다.
+    </p>
+
+    <h2>12. 문의</h2>
+    <p>
+        개발자: <strong>jun.studio</strong><br>
+        앱: <strong>QR포켓</strong><br>
+        패키지 이름: <strong>me.junstudio.qrmanager</strong><br>
+        이메일: <a href="mailto:jun.studio1@gmail.com">jun.studio1@gmail.com</a>
+    </p>
+
+    <p class="muted">
+        This privacy policy applies to the QR Pocket app, package name me.junstudio.qrmanager,
+        provided by jun.studio.
+    </p>
+</main>
+</body>
+</html>
