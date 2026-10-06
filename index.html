@@ -1,1 +1,68 @@
-Test
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="jun.studio에서 만든 생활에 유용한 Android 앱을 소개합니다.">
+    <title>jun.studio</title>
+    <style>
+        :root {
+            color-scheme: light;
+            --background: #f7f7fb;
+            --surface: #ffffff;
+            --text: #202124;
+            --muted: #686b73;
+            --border: #e4e5eb;
+            --primary: #5b5fc7;
+        }
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            background: var(--background);
+            color: var(--text);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+        }
+        main { width: min(920px, calc(100% - 36px)); margin: 0 auto; padding: 72px 0 64px; }
+        h1 { margin: 0 0 24px; font-size: 30px; line-height: 1.2; letter-spacing: -.025em; }
+        .apps { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+        .app-card {
+            display: flex;
+            min-height: 154px;
+            flex-direction: column;
+            padding: 22px;
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            background: var(--surface);
+        }
+        .app-card h3 { margin: 0 0 6px; font-size: 19px; }
+        .app-card p { margin: 0; color: var(--muted); font-size: 14px; }
+        @media (max-width: 640px) {
+            main { padding-top: 48px; }
+            .apps { grid-template-columns: 1fr; }
+            .app-card { min-height: 140px; }
+        }
+    </style>
+</head>
+<body>
+<main>
+    <h1>jun.studio</h1>
+    <section aria-label="앱 목록">
+        <div class="apps">
+            <article class="app-card">
+                <h3>포토체크</h3>
+                <p>사진에 포함된 위치·기기·촬영 시간 등의 정보를 확인하고 제거합니다.</p>
+            </article>
+            <article class="app-card">
+                <h3>주소검색</h3>
+                <p>도로명주소와 우편번호를 빠르고 간편하게 검색합니다.</p>
+            </article>
+            <article class="app-card">
+                <h3>부서진 화면</h3>
+                <p>화면이 깨진 듯한 재미있는 효과를 보여주는 앱입니다.</p>
+            </article>
+        </div>
+    </section>
+</main>
+</body>
+</html>
